@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-VA-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="conscientização aedes aegypt">
+    <meta name="author" content="Sara Egito">
+    <title>projeto biossegurança</title>
+</head>
+<body>
+    <h1>Testando conhecimentos</h1>
+    <hr>
+    <a href="index.html">voltar para o inicio</a>
+    <br> <br>
+    <input type="text" placeholder="Informe seu nome e turma">
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfbfc;
+      padding: 20px;
+    }
+    h2 {
+      color: #070002;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      border: 2px solid #4a67f6;
+      padding: 10px;
+      background-color: #eaf0fa;
+      border-radius: 10px;
+    }
+    button {
+      background-color: #d3dbf9;
+      color: rgb(10, 0, 0);
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #resultado {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Quiz: Aedes aegypti</h2>
+
+  <form id="quizForm">
+
+    <fieldset>
+      <legend>1. Quais doenças são transmitidas pelo Aedes aegypti?</legend>
+      <label><input type="radio" name="q1" value="certa"> Dengue, Zika e Chikungunya</label><br>
+      <label><input type="radio" name="q1" value="errada"> Apenas Dengue</label><br>
+      <label><input type="radio" name="q1" value="errada"> Febre Amarela e Gripe</label><br>
+      <label><input type="radio" name="q1" value="errada"> Covid-19 e Zika</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Onde o mosquito Aedes aegypti costuma colocar seus ovos?</legend>
+      <label><input type="radio" name="q2" value="certa"> Água parada limpa</label><br>
+      <label><input type="radio" name="q2" value="errada"> Areia da praia</label><br>
+      <label><input type="radio" name="q2" value="errada"> Água do mar</label><br>
+      <label><input type="radio" name="q2" value="errada"> Grama molhada</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Qual horário o Aedes aegypti mais ataca?</legend>
+      <label><input type="radio" name="q3" value="errada"> À noite</label><br>
+      <label><input type="radio" name="q3" value="certa"> Na madrugada e no por do sol</label><br>
+      <label><input type="radio" name="q3" value="errada"> Apenas de madrugada</label><br>
+      <label><input type="radio" name="q3" value="errada"> Em dias chuvosos</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Qual dessas ações ajuda na prevenção?</legend>
+      <label><input type="radio" name="q4" value="certa"> Esvaziar pratos de plantas</label><br>
+      <label><input type="radio" name="q4" value="errada"> Deixar pneus no quintal</label><br>
+      <label><input type="radio" name="q4" value="errada"> Usar ventilador</label><br>
+      <label><input type="radio" name="q4" value="errada"> Tomar sol</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Como o Aedes aegypti é identificado visualmente?</legend>
+      <label><input type="radio" name="q5" value="errada"> Corpo verde com asas azuis</label><br>
+      <label><input type="radio" name="q5" value="certa"> Corpo escuro com listras brancas</label><br>
+      <label><input type="radio" name="q5" value="errada"> Antenas longas e vermelhas</label><br>
+      <label><input type="radio" name="q5" value="errada"> Ponta do nariz brilhante</label>
+    </fieldset>
+
+    <button type="button" onclick="corrigirQuiz()">Ver resultado</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <script>
+    function corrigirQuiz() {
+      const respostas = document.querySelectorAll('input[type="radio"]:checked');
+      let acertos = 0;
+
+      respostas.forEach((resposta) => {
+        if (resposta.value === "certa") {
+          acertos++;
+        }
+      });
+
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = `Você acertou ${acertos} de 5 perguntas.`;
+
+      if (acertos === 5) {
+        resultado.style.color = "green";
+      } else if (acertos >= 3) {
+        resultado.style.color = "orange";
+      } else {
+        resultado.style.color = "red";
+      }
+    }
+  </script>
+  <a href="galeria.html">Galeria de focos</a>
+</body>
